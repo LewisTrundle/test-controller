@@ -34,12 +34,12 @@ window.onload = function () {
       }
     };
     function bindNipple() {
-      joystick.on('start', function() {
+      joystick.on('start', function(evt) {
         robot.start();
-      }).on('end', function() {
+      }).on('end', function(evt) {
         robot.stop();
       }
-      ).on('move', function(data) {
+      ).on('move', function(evt, data) {
         robot.moveRobot(data.angle.degree, data.force);
       });
     }
